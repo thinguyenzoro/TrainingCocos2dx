@@ -18,7 +18,7 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="..\Classes\PlayScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
+    <ClInclude Include="..\Classes\PlayScene.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
@@ -37,5 +37,31 @@
     <ResourceCompile Include="game.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\bg.jpg">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\gameover.jpg">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\loading_bg.jpg">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\mig_landscape_host_landscape.jpg">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\mig_landscape_host_portrait.jpg">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
 </Project>

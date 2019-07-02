@@ -22,31 +22,36 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#ifndef __HELLOWORLD_SCENE_H__
-#define __HELLOWORLD_SCENE_H__
+#ifndef __PLAY_SCENE_H__
+#define __PLAY_SCENE_H__
 
 #include "cocos2d.h"
+
 using namespace cocos2d;
 
-class HelloWorld : public cocos2d::Scene
+class GamePlay : public cocos2d::Layer
 {
+
+private:
+	PhysicsWorld *screenWorld;
+	Sprite* sprite;
+	Sprite* bullet;
+	Sprite** dandruff = new Sprite*[32];
 public:
-    static cocos2d::Scene* createScene();
+	static cocos2d::Scene* createScene();
+	virtual bool init() override;
+	void update(float) override;
 
+	// touch event
 	bool onTouchBegan(Touch *touch, Event *unused_event);
-	bool onTouchMoved(Touch *touch, Event *unused_event);
-	bool onTouchEnded(Touch *touch, Event *unused_event);
+	bool onTouchMove(Touch *touch, Event *unused_event);
+	bool onContactBegin(PhysicsContact &contact);
+	void setPhysicsWorld(PhysicsWorld *world) {
+		screenWorld = world;
+	};
+	Sprite** makeRandomDandruff();
 
-	Animation*createAnimation(std::string prefixName, int pFramesOrder, float delay);
-
-	Animation* animation;
-    virtual bool init();
-    
-    // a selector callback
-    void menuCloseCallback(cocos2d::Ref* pSender);
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(HelloWorld);
+	CREATE_FUNC(GamePlay);
 };
 
-#endif // __HELLOWORLD_SCENE_H__
+#endif // __PLAY_SCENE_H__
